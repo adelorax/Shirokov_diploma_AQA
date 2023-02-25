@@ -1,6 +1,8 @@
 import order_request
 import data
 
+# Проверяется, что код ответа равен 200
 def test_positive_assert():
-    # Проверяется, что код ответа равен 200
-    assert order_request.response_details.status_code == 200
+    response = order_request.get_order_details()
+    assert response.status_code == 200
+
